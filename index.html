@@ -3,267 +3,1027 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tebogo Rakoto | Portfolio</title>
-    
-}
+
+    <title>Tebogo Rakoto | Data Analyst & Data Engineer</title>
+
+    <meta name="description"
+        content="Tebogo Rakoto - BSc Mathematics and Computer Science graduate passionate about data analytics, data engineering, AI and technology.">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background: #f7f8fa;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #080b14;
+            color: #f5f7ff;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
+        /* ================= NAVIGATION ================= */
+
         nav {
-            background: #111827;
-            padding: 18px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(8, 11, 20, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         nav h2 {
-            color: white;
+            font-size: 22px;
+            background: linear-gradient(90deg,#7c3aed,#06b6d4);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         nav a {
-            color: white;
+            color: #ddd;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            transition: 0.3s;
         }
 
+        nav a:hover {
+            color: #06b6d4;
+        }
+
+        /* ================= HERO ================= */
+
         .hero {
-            background: #1f2937;
-            color: white;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             text-align: center;
-            padding: 100px 20px;
+
+            padding: 120px 20px 80px;
+
+            position: relative;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(124,58,237,.25), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(6,182,212,.20), transparent 35%),
+                #080b14;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+
+            background: rgba(124,58,237,.15);
+
+            filter: blur(80px);
+
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-40px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hello {
+            color: #06b6d4;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #a78bfa,
+                #22d3ee
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .typing {
+            color: #06b6d4;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
+            max-width: 700px;
+            margin: auto;
+            color: #aeb7c8;
+            font-size: 18px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            background: white;
-            color: #111827;
-            padding: 12px 22px;
-            border-radius: 6px;
+
+            padding: 13px 25px;
+            margin: 7px;
+
+            border-radius: 30px;
+
             text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
+            font-weight: 600;
+
+            transition: .3s;
         }
+
+        .primary {
+            color: white;
+
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #06b6d4
+            );
+        }
+
+        .secondary {
+            color: white;
+            border: 1px solid #334155;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(6,182,212,.25);
+        }
+
+        /* ================= GENERAL ================= */
 
         section {
-            padding: 60px 8%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
+            padding: 100px 8%;
         }
 
-        section h2 {
-            font-size: 30px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #b8c1d1;
             margin-bottom: 20px;
         }
+
+        .about-card {
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(124,58,237,.15),
+                rgba(6,182,212,.08)
+            );
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .about-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            color: #b8c1d1;
+        }
+
+        /* ================= SKILLS ================= */
 
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            gap: 15px;
         }
 
         .skill {
-            background: white;
-            padding: 12px 18px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
+            padding: 13px 20px;
+
+            border-radius: 30px;
+
+            background: #111827;
+
+            border: 1px solid #263247;
+
+            color: #dbeafe;
+
+            transition: .3s;
         }
+
+        .skill:hover {
+            transform: translateY(-6px) scale(1.05);
+
+            border-color: #06b6d4;
+
+            color: #22d3ee;
+
+            box-shadow: 0 8px 25px rgba(6,182,212,.15);
+        }
+
+        /* ================= PROJECTS ================= */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+            gap: 25px;
         }
 
         .project {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: #0f1422;
+
+            border: 1px solid #202a3d;
+
+            transition: .4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #06b6d4
+            );
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+
+            border-color: #334155;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.3);
+        }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .project h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 22px;
         }
+
+        .project p {
+            color: #9ca8bb;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            display: inline-block;
+
+            font-size: 12px;
+
+            padding: 5px 10px;
+
+            margin: 3px;
+
+            border-radius: 20px;
+
+            background: #172033;
+
+            color: #67e8f9;
+        }
+
+        /* ================= JOURNEY ================= */
+
+        .timeline {
+            border-left: 2px solid #334155;
+            margin-left: 20px;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -40px;
+            top: 5px;
+
+            width: 14px;
+            height: 14px;
+
+            background: #06b6d4;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px #06b6d4;
+        }
+
+        .timeline-item h3 {
+            color: #fff;
+        }
+
+        .timeline-item span {
+            color: #06b6d4;
+            font-size: 14px;
+        }
+
+        .timeline-item p {
+            color: #9ca8bb;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124,58,237,.15),
+                    rgba(6,182,212,.10)
+                );
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .contact-box p {
+            color: #b8c1d1;
+            margin-bottom: 25px;
+        }
+
+        .contact-links a {
+            color: #22d3ee;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
-            background: #111827;
-            color: white;
             text-align: center;
-            padding: 25px;
+
+            padding: 30px;
+
+            background: #05070d;
+
+            color: #64748b;
         }
 
-        @media (max-width: 700px) {
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 750px) {
+
             nav {
-                flex-direction: column;
-                gap: 10px;
+                padding: 15px 5%;
             }
 
-            nav a {
-                margin: 5px;
+            nav h2 {
+                font-size: 18px;
             }
 
-            .hero h1 {
-                font-size: 35px;
+            nav div {
+                display: none;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <nav>
-        <h2>Tebogo Rakoto</h2>
+<!-- ================= NAVIGATION ================= -->
 
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+<nav>
+
+    <h2>Tebogo.</h2>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hello">
+            👋 Hello, I'm
         </div>
-    </nav>
 
-    <header class="hero">
-        <h1>Hi, I'm Tebogo 👋</h1>
+        <h1>Tebogo Rakoto</h1>
 
-        <p>Computer Science Graduate | Software Development & Data</p>
+        <h2>
+            <span class="typing" id="typing"></span>
+        </h2>
 
-        <a class="button" href="#projects">View My Projects</a>
-        <a class="button" href="#contact">Contact Me</a>
-        
-    </header>
+        <p>
+            BSc Mathematics & Computer Science graduate passionate about
+            data, artificial intelligence, technology and building
+            practical solutions that make a difference.
+        </p>
 
-    <section id="about">
+        <div class="buttons">
+
+            <a href="#projects" class="button primary">
+                🚀 Explore My Work
+            </a>
+
+            <a href="#contact" class="button secondary">
+                Let's Connect
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
         <h2>About Me</h2>
 
-        <p>
-            I am a Computer Science and Statistics graduate from the University
-            of Limpopo, with an interest in software development, data analytics,
-            databases and technology.
-        </p>
+        <p>A little bit about my journey</p>
 
-        <p>
-            I enjoy solving problems, working with data and building practical
-            digital solutions. I am continuously developing my technical skills
-            through projects, training and hands-on learning.
-        </p>
-    </section>
+    </div>
 
-    <section id="skills">
-        <h2>Skills</h2>
 
-        <div class="skills">
-            <div class="skill">Python</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">C++</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">PHP</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Excel</div>
-            <div class="skill">Power BI</div>
-            <div class="skill">SPSS</div>
-            <div class="skill">SAS</div>
-            <div class="skill">Git & GitHub</div>
-        </div>
-    </section>
+    <div class="about">
 
-    <section id="projects">
-        <h2>Projects</h2>
+        <div class="about-text">
 
-        <div class="projects">
+            <p>
+                I'm a Mathematics and Computer Science graduate from
+                the University of Limpopo with a growing passion for
+                data analytics, data engineering and artificial intelligence.
+            </p>
 
-            <div class="project">
-                <h3>📊 Excel Sales Dashboard</h3>
-                <p>
-                    A data analysis dashboard using Excel to analyse sales,
-                    products, regions and revenue.
-                </p>
-            </div>
+            <p>
+                I enjoy working with numbers, discovering patterns,
+                solving problems and turning information into useful
+                insights and digital solutions.
+            </p>
 
-            <div class="project">
-                <h3>📞 Call Centre Analysis</h3>
-                <p>
-                    A data analysis project investigating call volumes by
-                    time and day to identify patterns in customer calls.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>🌐 School Website</h3>
-                <p>
-                    A responsive website project developed using HTML and CSS.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>📱 Patient Care App</h3>
-                <p>
-                    A mobile application concept designed to support patient
-                    login and appointment scheduling.
-                </p>
-            </div>
+            <p>
+                I'm constantly learning, building projects and exploring
+                new technologies. My goal is to grow into a strong
+                data professional who can use technology to solve
+                real-world problems.
+            </p>
 
         </div>
-    </section>
 
-    <section id="education">
-        <h2>Education</h2>
 
-        <h3>BSc in Mathematics and Computer Science</h3>
+        <div class="about-card">
+
+            <h3>💡 What drives me?</h3>
+
+            <p>
+                Curiosity. Problem solving. Learning new technology.
+                And the excitement of taking an idea and turning it
+                into something people can actually use.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Currently:</strong> Developing my skills in
+                Data Analytics, Data Engineering, Python, AI and
+                Power BI.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>My Skills</h2>
+
+        <p>Technologies and tools I'm working with</p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">🐍 Python</div>
+        <div class="skill">🗄️ SQL</div>
+        <div class="skill">📊 Power BI</div>
+        <div class="skill">📈 Excel</div>
+        <div class="skill">📐 Statistics</div>
+        <div class="skill">🤖 Artificial Intelligence</div>
+        <div class="skill">🧠 Data Analysis</div>
+        <div class="skill">📊 SPSS</div>
+        <div class="skill">📈 SAS</div>
+        <div class="skill">🌐 HTML</div>
+        <div class="skill">🎨 CSS</div>
+        <div class="skill">⚡ JavaScript</div>
+        <div class="skill">💻 C++</div>
+        <div class="skill">🐘 PHP</div>
+        <div class="skill">🔧 Git & GitHub</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>Featured Projects</h2>
+
+        <p>Things I've built and worked on</p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-icon">🤖</div>
+
+            <h3>TeacherMate AI</h3>
+
+            <p>
+                An AI-powered content generator designed to help teachers
+                create educational resources such as worksheets,
+                lesson plans, quizzes and memos.
+            </p>
+
+            <div class="tags">
+                <span>AI</span>
+                <span>JavaScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">📊</div>
+
+            <h3>Sentiment Analysis</h3>
+
+            <p>
+                A data project exploring how Python and data visualisation
+                can be used to analyse sentiment and communicate insights.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Data Analysis</span>
+                <span>Power BI</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">👩🏽‍💻</div>
+
+            <h3>First-Time Mom Chatbot</h3>
+
+            <p>
+                A collaborative AI project developed to create a helpful
+                chatbot experience for first-time mothers.
+            </p>
+
+            <div class="tags">
+                <span>AI</span>
+                <span>Chatbot</span>
+                <span>Team Project</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">📞</div>
+
+            <h3>Call Centre Analysis</h3>
+
+            <p>
+                A data analysis project investigating call volumes
+                by time and day to identify patterns and performance.
+            </p>
+
+            <div class="tags">
+                <span>Excel</span>
+                <span>Data Analysis</span>
+                <span>Power BI</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">🌐</div>
+
+            <h3>Patient Care Website</h3>
+
+            <p>
+                A web-based patient care concept designed around
+                patient interaction and appointment scheduling.
+            </p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">📈</div>
+
+            <h3>Data Analysis Projects</h3>
+
+            <p>
+                Academic and practical projects involving statistics,
+                data analysis, regression and time series.
+            </p>
+
+            <div class="tags">
+                <span>SAS</span>
+                <span>SPSS</span>
+                <span>Statistics</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section id="journey">
+
+    <div class="section-title">
+
+        <h2>My Journey</h2>
+
+        <p>Where I've been and where I'm going</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <span>2024</span>
+
+            <h3>🎓 BSc Mathematics & Computer Science</h3>
+
+            <p>
+                Completed my Bachelor's degree at the University of Limpopo,
+                with a strong foundation in Computer Science and Statistics.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>2025</span>
+
+            <h3>💻 Web Development & Technology</h3>
+
+            <p>
+                Continued developing my programming and web development
+                skills through practical projects and technology programmes.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>2025 – 2026</span>
+
+            <h3>📚 Education & Mathematics</h3>
+
+            <p>
+                Worked in an academic support environment, helping learners
+                develop their mathematics skills while gaining valuable
+                communication and problem-solving experience.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>2026</span>
+
+            <h3>🚀 CAPACITI – Data / Data Engineering</h3>
+
+            <p>
+                Developing practical skills in data, artificial intelligence,
+                Python, Power BI and technology through hands-on projects.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>Today →</span>
+
+            <h3>🌱 Building My Future in Data & Technology</h3>
+
+            <p>
+                Continuing to learn, build projects and grow toward a career
+                in Data Analytics, Data Engineering and AI.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>Let's Connect 👋</h2>
 
         <p>
-            University of Limpopo — Completed 2024
+            I'm always open to learning, collaborating and exploring
+            opportunities in technology and data.
         </p>
 
+    </div>
+
+
+    <div class="contact-box">
+
         <p>
-            Major areas: Computer Science and Statistics
+            Interested in my work or have an opportunity you'd like
+            to discuss? I'd love to hear from you.
         </p>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
 
-        <p>
-            GitHub:
-            <a href="https://github.com/" target="_blank">
-                My GitHub
+        <div class="buttons">
+
+            <a
+                href="https://github.com/Tebogo16299"
+                target="_blank"
+                class="button primary">
+                💻 GitHub
             </a>
-        </p>
 
-        <p>
-            LinkedIn: Add your LinkedIn profile here
-        </p>
 
-        <p>
-            Email: Add your professional email here
-        </p>
-    </section>
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                class="button secondary">
+                💼 LinkedIn
+            </a>
 
-    <footer>
-        <p>© 2026 Tebogo Rakoto. All rights reserved.</p>
-    </footer>
+        </div>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR-EMAIL@example.com">
+                📧 Email Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Tebogo Rakoto · Built with 💜, curiosity & code.
+    </p>
+
+</footer>
+
+
+<!-- ================= TYPING ANIMATION ================= -->
+
+<script>
+
+    const words = [
+        "Data Analyst",
+        "Data Engineer",
+        "AI Enthusiast",
+        "Problem Solver",
+        "Technology Explorer"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typing = document.getElementById("typing");
+
+    function typeEffect() {
+
+        const currentWord = words[wordIndex];
+
+        if (!deleting) {
+
+            typing.textContent =
+                currentWord.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentWord.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1500);
+
+                return;
+            }
+
+        } else {
+
+            typing.textContent =
+                currentWord.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+
+                wordIndex++;
+
+                if (wordIndex === words.length) {
+                    wordIndex = 0;
+                }
+
+            }
+
+        }
+
+        setTimeout(typeEffect, deleting ? 60 : 100);
+    }
+
+    typeEffect();
+
+</script>
+
 
 </body>
 </html>
