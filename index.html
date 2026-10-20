@@ -1,1029 +1,2029 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Tebogo Rakoto | Data Analyst & Data Engineer</title>
-
-    <meta name="description"
-        content="Tebogo Rakoto - BSc Mathematics and Computer Science graduate passionate about data analytics, data engineering, AI and technology.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #080b14;
-            color: #f5f7ff;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* ================= NAVIGATION ================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 18px 8%;
-
-            background: rgba(8, 11, 20, 0.85);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        nav h2 {
-            font-size: 22px;
-            background: linear-gradient(90deg,#7c3aed,#06b6d4);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        nav a {
-            color: #ddd;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #06b6d4;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 120px 20px 80px;
-
-            position: relative;
-
-            background:
-                radial-gradient(circle at 20% 20%, rgba(124,58,237,.25), transparent 35%),
-                radial-gradient(circle at 80% 70%, rgba(6,182,212,.20), transparent 35%),
-                #080b14;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-
-            background: rgba(124,58,237,.15);
-
-            filter: blur(80px);
-
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-40px);
-            }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 850px;
-        }
-
-        .hello {
-            color: #06b6d4;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            line-height: 1.05;
-            margin-bottom: 20px;
-
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #a78bfa,
-                #22d3ee
-            );
-
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .hero h2 {
-            font-size: clamp(20px, 3vw, 30px);
-            color: #cbd5e1;
-            margin-bottom: 20px;
-        }
-
-        .typing {
-            color: #06b6d4;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #aeb7c8;
-            font-size: 18px;
-        }
-
-        /* ================= BUTTONS ================= */
-
-        .buttons {
-            margin-top: 35px;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 13px 25px;
-            margin: 7px;
-
-            border-radius: 30px;
-
-            text-decoration: none;
-            font-weight: 600;
-
-            transition: .3s;
-        }
-
-        .primary {
-            color: white;
-
-            background: linear-gradient(
-                90deg,
-                #7c3aed,
-                #06b6d4
-            );
-        }
-
-        .secondary {
-            color: white;
-            border: 1px solid #334155;
-        }
-
-        .button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(6,182,212,.25);
-        }
-
-        /* ================= GENERAL ================= */
-
-        section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #94a3b8;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: #b8c1d1;
-            margin-bottom: 20px;
-        }
-
-        .about-card {
-            padding: 35px;
-
-            border-radius: 20px;
-
-            background: linear-gradient(
-                145deg,
-                rgba(124,58,237,.15),
-                rgba(6,182,212,.08)
-            );
-
-            border: 1px solid rgba(255,255,255,.08);
-        }
-
-        .about-card h3 {
-            margin-bottom: 20px;
-        }
-
-        .about-card p {
-            color: #b8c1d1;
-        }
-
-        /* ================= SKILLS ================= */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill {
-            padding: 13px 20px;
-
-            border-radius: 30px;
-
-            background: #111827;
-
-            border: 1px solid #263247;
-
-            color: #dbeafe;
-
-            transition: .3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-6px) scale(1.05);
-
-            border-color: #06b6d4;
-
-            color: #22d3ee;
-
-            box-shadow: 0 8px 25px rgba(6,182,212,.15);
-        }
-
-        /* ================= PROJECTS ================= */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
-            gap: 25px;
-        }
-
-        .project {
-            padding: 30px;
-
-            border-radius: 20px;
-
-            background: #0f1422;
-
-            border: 1px solid #202a3d;
-
-            transition: .4s;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .project::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 3px;
-
-            background: linear-gradient(
-                90deg,
-                #7c3aed,
-                #06b6d4
-            );
-        }
-
-        .project:hover {
-            transform: translateY(-10px);
-
-            border-color: #334155;
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.3);
-        }
-
-        .project-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .project h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
-        }
-
-        .project p {
-            color: #9ca8bb;
-            margin-bottom: 20px;
-        }
-
-        .tags span {
-            display: inline-block;
-
-            font-size: 12px;
-
-            padding: 5px 10px;
-
-            margin: 3px;
-
-            border-radius: 20px;
-
-            background: #172033;
-
-            color: #67e8f9;
-        }
-
-        /* ================= JOURNEY ================= */
-
-        .timeline {
-            border-left: 2px solid #334155;
-            margin-left: 20px;
-            padding-left: 30px;
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: "";
-
-            position: absolute;
-
-            left: -40px;
-            top: 5px;
-
-            width: 14px;
-            height: 14px;
-
-            background: #06b6d4;
-
-            border-radius: 50%;
-
-            box-shadow: 0 0 15px #06b6d4;
-        }
-
-        .timeline-item h3 {
-            color: #fff;
-        }
-
-        .timeline-item span {
-            color: #06b6d4;
-            font-size: 14px;
-        }
-
-        .timeline-item p {
-            color: #9ca8bb;
-        }
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 700px;
-            margin: auto;
-
-            padding: 45px;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(124,58,237,.15),
-                    rgba(6,182,212,.10)
-                );
-
-            border: 1px solid rgba(255,255,255,.08);
-        }
-
-        .contact-box p {
-            color: #b8c1d1;
-            margin-bottom: 25px;
-        }
-
-        .contact-links a {
-            color: #22d3ee;
-            text-decoration: none;
-            margin: 10px;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            text-align: center;
-
-            padding: 30px;
-
-            background: #05070d;
-
-            color: #64748b;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media(max-width: 750px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav h2 {
-                font-size: 18px;
-            }
-
-            nav div {
-                display: none;
-            }
-
-            section {
-                padding: 75px 6%;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 120px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-title h2 {
-                font-size: 32px;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17213f">
+  <meta name="description" content="Tebogo Rakoto — Mathematics and Computer Science graduate, aspiring Data Analyst, Data Engineer AI enthusiast and Software developer.">
+  <title>Tebogo Rakoto | Data & Technology Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+      --navy: #182342;
+      --navy-light: #263653;
+      --pink: #f28bc4;
+      --pink-dark: #d83c8b;
+      --pink-light: #ffe2f1;
+      --lavender: #f2eafb;
+      --white: #ffffff;
+      --text: #252b3b;
+      --muted: #61677a;
+      --shadow: 0 12px 35px rgba(24, 35, 66, .09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1320px, 90%);
+      margin-inline: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+    }
+
+    .navbar {
+      min-height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: clamp(1.35rem, 2.2vw, 2rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      font-family: "Pacifico", cursive;
+      color: var(--pink);
+      font-weight: 400;
+    }
+
+    .logo .heart {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2.1vw, 32px);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .94rem;
+      font-weight: 700;
+      padding: 10px 0;
+      position: relative;
+      transition: color .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--pink);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      border-radius: 4px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--pink);
+    }
+
+    .cv-button,
+    .primary-button,
+    .outline-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 23px;
+      border-radius: 50px;
+      font: inherit;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .cv-button {
+      color: var(--navy);
+      background: linear-gradient(120deg, #f7b0d8, #ffe1f0);
+      white-space: nowrap;
+    }
+
+    .primary-button {
+      color: var(--navy);
+      background: linear-gradient(110deg, #f6a3d2, #f7b7df);
+    }
+
+    .outline-button {
+      color: white;
+      border: 1.5px solid rgba(255,255,255,.85);
+      background: transparent;
+    }
+
+    .cv-button:hover,
+    .primary-button:hover,
+    .outline-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(242,139,196,.25);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: white;
+      border: 0;
+      background: transparent;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(ellipse at 95% 90%, rgba(244,129,191,.85), transparent 34%),
+        radial-gradient(ellipse at 54% 15%, rgba(105,139,166,.65), transparent 42%),
+        linear-gradient(120deg, #25233f 0%, #263951 53%, #55405c 100%);
+      padding-top: 90px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(19,25,49,.48), transparent 75%),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 108px,
+          rgba(255,255,255,.045) 110px,
+          transparent 115px
+        );
+    }
+
+    .hero-main {
+      min-height: 535px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .hero-copy {
+      z-index: 3;
+      padding: 38px 0 105px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-size: .95rem;
+    }
+
+    .eyebrow::after {
+      content: "";
+      width: 38px;
+      height: 4px;
+      background: var(--pink);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 5.4vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .script-name {
+      display: inline-block;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      color: var(--pink);
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(.9rem, 1.5vw, 1.2rem);
+      letter-spacing: 1px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #f3f2fa;
+      font-size: clamp(.94rem, 1.15vw, 1.08rem);
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 22px;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: var(--navy);
+      border-radius: 50%;
+      font-size: 1.15rem;
+      transition: .25s;
+    }
+
+    .social-links a:hover {
+      background: var(--pink);
+      transform: translateY(-4px);
+    }
+
+    .hero-visual {
+      position: relative;
+      align-self: stretch;
+      min-width: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    /* IMPORTANT: contain keeps the entire portrait visible. */
+
+    .hero-portrait {
+      width: 100%;
+      height: 100%;
+      max-height: 650px;
+      object-fit: contain;
+      object-position: center bottom;
+      align-self: end;
+      filter: drop-shadow(0 12px 28px rgba(0,0,0,.14));
+    }
+
+    .hero-quote {
+      position: absolute;
+      right: -2%;
+      top: 18%;
+      z-index: 4;
+      max-width: 175px;
+      color: white;
+      font-family: "Pacifico", cursive;
+      font-size: clamp(1rem, 1.5vw, 1.35rem);
+      line-height: 1.65;
+      transform: rotate(-5deg);
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+
+    .hero-quote span {
+      display: block;
+      color: var(--pink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.5rem;
+    }
+
+    /* INTEREST STRIP */
+
+    .interest-strip {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: -80px;
+      margin-bottom: 24px;
+      padding: 22px 15px;
+      border-radius: 24px;
+      background: rgba(255,239,248,.91);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      color: var(--navy);
+    }
+
+    .interest-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 5px 12px;
+      min-width: 0;
+      border-right: 1px solid #e5b8d1;
+    }
+
+    .interest-item:last-child {
+      border-right: 0;
+    }
+
+    .interest-item i {
+      font-size: clamp(1.55rem, 2.6vw, 2.5rem);
+      color: #e74691;
+      flex-shrink: 0;
+    }
+
+    .interest-item strong {
+      display: block;
+      font-size: .91rem;
+      line-height: 1.4;
+    }
+
+    .interest-item small {
+      display: block;
+      font-size: .77rem;
+      line-height: 1.45;
+      margin-top: 3px;
+      color: #454d64;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: .9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-label::after {
+      content: "";
+      width: 38px;
+      height: 3px;
+      background: var(--pink);
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 3.7vw, 3rem);
+      line-height: 1.25;
+      color: var(--navy);
+    }
+
+    .section-heading h2 span {
+      font-family: "Pacifico", cursive;
+      color: var(--pink);
+      font-weight: 400;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      margin: 13px 0;
+      color: #404451;
+    }
+
+    .trait-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .trait-card {
+      padding: 23px 17px;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      background: linear-gradient(135deg, #fbf3fc, #f0eafb);
+      border-radius: 22px;
+      min-width: 0;
+    }
+
+    .trait-card:nth-child(2) {
+      background: linear-gradient(135deg, #f9eff8, #fff0f7);
+    }
+
+    .trait-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: #ed4a9b;
+      border-radius: 50%;
+      font-size: 1.3rem;
+    }
+
+    .trait-card h3 {
+      font-size: .98rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .trait-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* SKILLS */
+
+    .skills-section {
+      background: #f9f7fc;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid #eee8f5;
+      padding: 27px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px rgba(24,35,66,.035);
+      transition: transform .25s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-card > i {
+      font-size: 1.8rem;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
+    }
+
+    .skill-card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 11px;
+      border-radius: 30px;
+      background: #f8eaf5;
+      color: #7b3269;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #eee7f2;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s;
+      min-width: 0;
+    }
+
+    .project-banner {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #272c4d, #645078);
+      color: #ffb8dc;
+      font-size: 3.2rem;
+    }
+
+    .project-card:nth-child(2n) .project-banner {
+      background: linear-gradient(135deg, #f5d9ec, #e6ddfa);
+      color: #c33d88;
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-body h3 {
+      color: var(--navy);
+      margin-bottom: 9px;
+      line-height: 1.4;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: .91rem;
+      margin-bottom: 17px;
+    }
+
+    .project-body .tags {
+      margin-top: auto;
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: var(--pink-dark);
+      font-size: .9rem;
+    }
+
+    /* JOURNEY */
+
+    .journey-section {
+      background: linear-gradient(120deg, #f9f5fc, #fff4fa);
+    }
+
+    .timeline {
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding-left: 30px;
+      border-left: 3px solid #f0add2;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 30px 25px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 6px;
+      width: 17px;
+      height: 17px;
+      background: var(--pink-dark);
+      border: 4px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #f0add2;
+    }
+
+    .timeline-item .date {
+      font-size: .82rem;
+      font-weight: 800;
+      color: var(--pink-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timeline-item h3 {
+      margin: 4px 0;
+      color: var(--navy);
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    /* INTERESTS */
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .interest-card {
+      text-align: center;
+      padding: 27px 13px;
+      background: linear-gradient(145deg, #fff3fa, #f1edfc);
+      border-radius: 20px;
+    }
+
+    .interest-card i {
+      color: var(--pink-dark);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .interest-card h3 {
+      color: var(--navy);
+      font-size: .95rem;
+      margin-bottom: 6px;
+    }
+
+    .interest-card p {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      color: white;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(242,139,196,.22), transparent 35%),
+        var(--navy);
+    }
+
+    .contact-section .section-heading h2 {
+      color: white;
+    }
+
+    .contact-section .section-intro {
+      color: #e0e4ef;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      margin-top: 32px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 17px;
+      align-content: start;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 15px;
+      background: rgba(255,255,255,.055);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item i {
+      color: var(--pink);
+      font-size: 1.25rem;
+      width: 25px;
+      text-align: center;
+    }
+
+    .contact-item small {
+      display: block;
+      color: #d3d8e7;
+    }
+
+    .contact-item strong {
+      font-size: .94rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 13px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: white;
+      background: rgba(255,255,255,.07);
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #d7d9e5;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--pink);
+    }
+
+    .contact-form textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .contact-form .primary-button {
+      justify-self: start;
+    }
+
+    footer {
+      padding: 23px 0;
+      background: #111a31;
+      color: #dfe2ec;
+      text-align: center;
+      font-size: .86rem;
+    }
+
+    footer span {
+      color: var(--pink);
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 1050px) {
+      .navbar {
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: .84rem;
+      }
+
+      .cv-button {
+        padding: 11px 15px;
+        font-size: .85rem;
+      }
+
+      .hero-main {
+        min-height: 510px;
+      }
+
+      .hero-quote {
+        right: 0;
+        max-width: 125px;
+      }
+
+      .interest-item {
+        gap: 8px;
+        padding-inline: 7px;
+      }
+
+      .interest-item strong {
+        font-size: .8rem;
+      }
+
+      .interest-item small {
+        font-size: .7rem;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* PHONES AND SMALL WINDOWS */
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 72px;
+      }
+
+      .container {
+        width: min(92%, 560px);
+      }
+
+      .navbar {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar > .cv-button {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 66px;
+        left: 4%;
+        right: 4%;
+        padding: 18px;
+        border: 1px solid rgba(255,255,255,.15);
+        border-radius: 18px;
+        background: #202844;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 12px;
+        font-size: .95rem;
+      }
+
+      .nav-links a.active::after {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 43px 0 0;
+        order: 1;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 10vw, 4rem);
+        letter-spacing: -1.5px;
+      }
+
+      .hero-subtitle {
+        font-size: .91rem;
+      }
+
+      .hero-description {
+        font-size: .96rem;
+      }
+
+      .hero-visual {
+        order: 2;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        margin-top: 5px;
+        align-items: flex-end;
+      }
+
+      .hero-portrait {
+        width: 100%;
+        height: auto;
+        max-height: 480px;
+        object-fit: contain;
+        object-position: center bottom;
+      }
+
+      .hero-quote {
+        top: 12%;
+        right: 0;
+        max-width: 115px;
+        font-size: 1rem;
+      }
+
+      .interest-strip {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+        padding: 17px 5%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .interest-item {
+        justify-content: flex-start;
+        border: 0;
+        padding: 8px 4px;
+      }
+
+      .interest-item:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .interest-item i {
+        font-size: 1.65rem;
+      }
+
+      .interest-item strong {
+        font-size: .85rem;
+      }
+
+      .interest-item small {
+        font-size: .75rem;
+      }
+
+      section.content-section {
+        padding: 60px 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .trait-grid {
+        gap: 10px;
+      }
+
+      .trait-card {
+        padding: 17px 12px;
+        flex-direction: column;
+      }
+
+      .trait-card h3 {
+        font-size: .91rem;
+      }
+
+      .trait-card p {
+        font-size: .82rem;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card {
+        padding: 23px;
+      }
+
+      .interests-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .interest-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .project-banner {
+        min-height: 125px;
+      }
+
+      .timeline {
+        margin-left: 7px;
+      }
+
+      .contact-form .primary-button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .trait-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trait-card {
+        flex-direction: row;
+      }
+
+      .hero-quote {
+        max-width: 90px;
+        font-size: .85rem;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+      }
+    }
+
+/* CERTIFICATES SECTION */
+.certificates-section {
+    padding: 80px 5%;
+    background: #ffffff;
+    color: #192440;
+}
+
+.certificates-section .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.certificates-section .section-label {
+    color: #ec4899;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.certificates-section .section-heading h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin: 12px 0;
+}
+
+.certificates-section .section-heading h2 span {
+    color: #ec4899;
+}
+
+.certificates-section .section-heading p {
+    color: #647084;
+    line-height: 1.7;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.certificate-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(25, 36, 64, 0.08);
+    transition: transform 0.25s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-card > a:first-child {
+    display: block;
+    padding: 10px;
+    background: #f5f6fa;
+}
+
+.certificate-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.certificate-info {
+    padding: 18px;
+}
+
+.certificate-info h3 {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.certificate-info p {
+    color: #697386;
+    font-size: 14px;
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #fce7f3;
+    color: #9d174d;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    /* Reduced motion accessibility */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="#home">Tebogo <span>Rakoto</span> <span class="heart">♥</span></a>
 
-<nav>
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-    <h2>Tebogo.</h2>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#interests">Interests</a></li>
+       <li><a href="#contact">Contact</a></li>
+        
+      </ul>
 
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
-    </div>
+      <a class="cv-button" href="Assets/CV.pdf" download>
+        <i class="fa-regular fa-user"></i> Download CV
+      </a>
+    </nav>
+  </header>
 
-</nav>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-main container">
 
+        <div class="hero-copy">
+          <div class="eyebrow">Hello, I'm</div>
 
-<!-- ================= HERO ================= -->
+          <h1>Tebogo <span class="script-name">Rakoto</span></h1>
 
-<header class="hero">
+          <p class="hero-subtitle">
+            DATA ANALYST | DATA ENGINEER | AI ENTHUSIAST | SOFTWARE DEVELOPER
+          </p>
 
-    <div class="hero-content">
+          <p class="hero-description">
+            BSc Mathematics and Computer Science graduate passionate about
+            data, artificial intelligence and technology. I love turning data
+            into meaningful insights, building practical solutions and helping
+            others — especially teaching mathematics and supporting young
+            people to reach their full potential.
+          </p>
 
-        <div class="hello">
-            👋 Hello, I'm
-        </div>
-
-        <h1>Tebogo Rakoto</h1>
-
-        <h2>
-            <span class="typing" id="typing"></span>
-        </h2>
-
-        <p>
-            BSc Mathematics & Computer Science graduate passionate about
-            data, artificial intelligence, technology and building
-            practical solutions that make a difference.
-        </p>
-
-        <div class="buttons">
-
-            <a href="#projects" class="button primary">
-                🚀 Explore My Work
+          <div class="hero-buttons">
+            <a class="primary-button" href="#projects">
+              <i class="fa-solid fa-rocket"></i>
+              View My Projects
+              <i class="fa-solid fa-chevron-right"></i>
             </a>
 
-            <a href="#contact" class="button secondary">
-                Let's Connect
+            <a class="outline-button" href="#contact">
+              <i class="fa-regular fa-user"></i>
+              Let's Connect
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/Tebogo16299"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
             </a>
 
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-    <div class="section-title">
-
-        <h2>About Me</h2>
-
-        <p>A little bit about my journey</p>
-
-    </div>
-
-
-    <div class="about">
-
-        <div class="about-text">
-
-            <p>
-                I'm a Mathematics and Computer Science graduate from
-                the University of Limpopo with a growing passion for
-                data analytics, data engineering and artificial intelligence.
-            </p>
-
-            <p>
-                I enjoy working with numbers, discovering patterns,
-                solving problems and turning information into useful
-                insights and digital solutions.
-            </p>
-
-            <p>
-                I'm constantly learning, building projects and exploring
-                new technologies. My goal is to grow into a strong
-                data professional who can use technology to solve
-                real-world problems.
-            </p>
-
-        </div>
-
-
-        <div class="about-card">
-
-            <h3>💡 What drives me?</h3>
-
-            <p>
-                Curiosity. Problem solving. Learning new technology.
-                And the excitement of taking an idea and turning it
-                into something people can actually use.
-            </p>
-
-            <br>
-
-            <p>
-                <strong>Currently:</strong> Developing my skills in
-                Data Analytics, Data Engineering, Python, AI and
-                Power BI.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SKILLS ================= -->
-
-<section id="skills">
-
-    <div class="section-title">
-
-        <h2>My Skills</h2>
-
-        <p>Technologies and tools I'm working with</p>
-
-    </div>
-
-
-    <div class="skills">
-
-        <div class="skill">🐍 Python</div>
-        <div class="skill">🗄️ SQL</div>
-        <div class="skill">📊 Power BI</div>
-        <div class="skill">📈 Excel</div>
-        <div class="skill">📐 Statistics</div>
-        <div class="skill">🤖 Artificial Intelligence</div>
-        <div class="skill">🧠 Data Analysis</div>
-        <div class="skill">📊 SPSS</div>
-        <div class="skill">📈 SAS</div>
-        <div class="skill">🌐 HTML</div>
-        <div class="skill">🎨 CSS</div>
-        <div class="skill">⚡ JavaScript</div>
-        <div class="skill">💻 C++</div>
-        <div class="skill">🐘 PHP</div>
-        <div class="skill">🔧 Git & GitHub</div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects">
-
-    <div class="section-title">
-
-        <h2>Featured Projects</h2>
-
-        <p>Things I've built and worked on</p>
-
-    </div>
-
-
-    <div class="projects">
-
-
-        <div class="project">
-
-            <div class="project-icon">🤖</div>
-
-            <h3>TeacherMate AI</h3>
-
-            <p>
-                An AI-powered content generator designed to help teachers
-                create educational resources such as worksheets,
-                lesson plans, quizzes and memos.
-            </p>
-
-            <div class="tags">
-                <span>AI</span>
-                <span>JavaScript</span>
-                <span>HTML</span>
-                <span>CSS</span>
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-icon">📊</div>
-
-            <h3>Sentiment Analysis</h3>
-
-            <p>
-                A data project exploring how Python and data visualisation
-                can be used to analyse sentiment and communicate insights.
-            </p>
-
-            <div class="tags">
-                <span>Python</span>
-                <span>Data Analysis</span>
-                <span>Power BI</span>
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-icon">👩🏽‍💻</div>
-
-            <h3>First-Time Mom Chatbot</h3>
-
-            <p>
-                A collaborative AI project developed to create a helpful
-                chatbot experience for first-time mothers.
-            </p>
-
-            <div class="tags">
-                <span>AI</span>
-                <span>Chatbot</span>
-                <span>Team Project</span>
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-icon">📞</div>
-
-            <h3>Call Centre Analysis</h3>
-
-            <p>
-                A data analysis project investigating call volumes
-                by time and day to identify patterns and performance.
-            </p>
-
-            <div class="tags">
-                <span>Excel</span>
-                <span>Data Analysis</span>
-                <span>Power BI</span>
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-icon">🌐</div>
-
-            <h3>Patient Care Website</h3>
-
-            <p>
-                A web-based patient care concept designed around
-                patient interaction and appointment scheduling.
-            </p>
-
-            <div class="tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-icon">📈</div>
-
-            <h3>Data Analysis Projects</h3>
-
-            <p>
-                Academic and practical projects involving statistics,
-                data analysis, regression and time series.
-            </p>
-
-            <div class="tags">
-                <span>SAS</span>
-                <span>SPSS</span>
-                <span>Statistics</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= JOURNEY ================= -->
-
-<section id="journey">
-
-    <div class="section-title">
-
-        <h2>My Journey</h2>
-
-        <p>Where I've been and where I'm going</p>
-
-    </div>
-
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <span>2024</span>
-
-            <h3>🎓 BSc Mathematics & Computer Science</h3>
-
-            <p>
-                Completed my Bachelor's degree at the University of Limpopo,
-                with a strong foundation in Computer Science and Statistics.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>2025</span>
-
-            <h3>💻 Web Development & Technology</h3>
-
-            <p>
-                Continued developing my programming and web development
-                skills through practical projects and technology programmes.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>2025 – 2026</span>
-
-            <h3>📚 Education & Mathematics</h3>
-
-            <p>
-                Worked in an academic support environment, helping learners
-                develop their mathematics skills while gaining valuable
-                communication and problem-solving experience.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>2026</span>
-
-            <h3>🚀 CAPACITI – Data / Data Engineering</h3>
-
-            <p>
-                Developing practical skills in data, artificial intelligence,
-                Python, Power BI and technology through hands-on projects.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>Today →</span>
-
-            <h3>🌱 Building My Future in Data & Technology</h3>
-
-            <p>
-                Continuing to learn, build projects and grow toward a career
-                in Data Analytics, Data Engineering and AI.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <div class="section-title">
-
-        <h2>Let's Connect 👋</h2>
-
-        <p>
-            I'm always open to learning, collaborating and exploring
-            opportunities in technology and data.
-        </p>
-
-    </div>
-
-
-    <div class="contact-box">
-
-        <p>
-            Interested in my work or have an opportunity you'd like
-            to discuss? I'd love to hear from you.
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-                href="https://github.com/Tebogo16299"
-                target="_blank"
-                class="button primary">
-                💻 GitHub
+            <!-- Replace # with your actual LinkedIn profile URL -->
+            <a href="https://www.linkedin.com/in/tebogo-rakoto-1b8355210/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BV3rdasnrQRSi6ciG%2FJAFjQ%3D%3D" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
             </a>
 
-
-            <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                class="button secondary">
-                💼 LinkedIn
+            <a href="mailto:melitahrakoto88@gmail.com"
+               aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
             </a>
 
+            
+
+<a class="cv-button" href="Assets/CV.pdf" download>
+  <i class="fa-regular fa-file-pdf"></i>
+  Download CV
+</a>
+          </div>
         </div>
 
+        <div class="hero-visual">
+          <!-- Keep the full portrait visible on different screen sizes. -->
+          <img
+            class="hero-portrait"
+            src="Assets/Tebogo Rakoto.jpeg"
+            alt="Portrait of Tebogo Rakoto"
+            fetchpriority="high"
+          >
 
-        <div class="contact-links">
-
-            <a href="mailto:YOUR-EMAIL@example.com">
-                📧 Email Me
-            </a>
-
+          <div class="hero-quote">
+            Turning ideas into opportunities for a brighter tomorrow
+            <span>♥</span>
+          </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- INTEREST STRIP -->
+    <div class="interest-strip container">
+      <div class="interest-item">
+        <i class="fa-solid fa-plane"></i>
+        <div>
+          <strong>Travelling</strong>
+          <small>Exploring new places and cultures</small>
+        </div>
+      </div>
+
+      <div class="interest-item">
+        <i class="fa-solid fa-person-walking"></i>
+        <div>
+          <strong>Walking</strong>
+          <small>Staying active and healthy</small>
+        </div>
+      </div>
+
+      <div class="interest-item">
+        <i class="fa-solid fa-people-roof"></i>
+        <div>
+          <strong>Family Oriented</strong>
+          <small>Creating beautiful memories</small>
+        </div>
+      </div>
+
+      <div class="interest-item">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <div>
+          <strong>Community Service</strong>
+          <small>Giving back and supporting others</small>
+        </div>
+      </div>
+
+      <div class="interest-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div>
+          <strong>Teaching Maths</strong>
+          <small>Helping learners achieve their potential</small>
+        </div>
+      </div>
     </div>
 
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="section-heading">
+            <div class="section-label">About Me</div>
+            <h2>More Than Just <span>Code</span></h2>
+          </div>
+
+          <p>
+            I'm a Mathematics and Computer Science graduate from the
+            University of Limpopo, with a passion for data analytics,
+            data engineering and artificial intelligence.
+          </p>
+
+          <p>
+            I enjoy working with numbers, discovering patterns, solving
+            real-world problems and building practical digital solutions.
+            My background combines mathematical thinking, statistics
+            and programming.
+          </p>
+
+          <p>
+            Through my CAPACITI journey, I am developing my technical
+            skills and working towards a career in data and AI. I am
+            also passionate about teaching mathematics, supporting
+            learners and helping them unlock their potential.
+          </p>
+
+          <p>
+            Outside technology, I love travelling, walking, spending time
+            with family and giving back through community service.
+          </p>
+        </div>
+
+        <div class="trait-grid">
+          <article class="trait-card">
+            <div class="trait-icon">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <div>
+              <h3>Curious Learner</h3>
+              <p>Always exploring new technologies and ideas.</p>
+            </div>
+          </article>
+
+          <article class="trait-card">
+            <div class="trait-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div>
+              <h3>Problem Solver</h3>
+              <p>I enjoy turning challenges into solutions.</p>
+            </div>
+          </article>
+
+          <article class="trait-card">
+            <div class="trait-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div>
+              <h3>People Focused</h3>
+              <p>I love helping, teaching and supporting others.</p>
+            </div>
+          </article>
+
+          <article class="trait-card">
+            <div class="trait-icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div>
+              <h3>Goal Driven</h3>
+              <p>Building a career in data, AI and technology.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">What I Can Do</div>
+          <h2>My Technical <span>Skills</span></h2>
+          <p class="section-intro">
+            A combination of analytical thinking, programming,
+            visualisation and problem-solving skills.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Data Analytics & Visualisation</h3>
+            <div class="tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Excel</span>
+              <span class="tag">PivotTables</span>
+              <span class="tag">Dashboards</span>
+              <span class="tag">Data Cleaning</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Data & Statistics</h3>
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">SAS</span>
+              <span class="tag">SPSS</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Time Series</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Programming & Web</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">PHP</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>AI & Machine Learning</h3>
+            <div class="tags">
+              <span class="tag">Sentiment Analysis</span>
+              <span class="tag">TextBlob</span>
+              <span class="tag">AI Concepts</span>
+              <span class="tag">Prompt Design</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <i class="fa-brands fa-github"></i>
+            <h3>Tools & Collaboration</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Microsoft Office</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <i class="fa-solid fa-calculator"></i>
+            <h3>Mathematical Thinking</h3>
+            <div class="tags">
+              <span class="tag">Statistics</span>
+              <span class="tag">Mathematics</span>
+              <span class="tag">Data Interpretation</span>
+              <span class="tag">Analytical Thinking</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="content-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">My Work</div>
+          <h2>Projects That Tell <span>a Story</span></h2>
+          <p class="section-intro">
+            Practical projects that demonstrate how I apply technology,
+            data and creativity to real-world problems.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="project-body">
+              <h3>Customer Sentiment Analysis</h3>
+              <p>
+                Analysed customer reviews with Python and TextBlob,
+                classified sentiment and prepared insights for a
+                Power BI dashboard.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">TextBlob</span>
+                <span class="tag">Power BI</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                View on GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="project-body">
+              <h3>TeacherMate AI Content Generator</h3>
+              <p>
+                An education-focused project designed to help teachers
+                create worksheets, lesson plans, quizzes and learning
+                materials more efficiently.
+              </p>
+              <div class="tags">
+                <span class="tag">AI</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Education</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                Explore Projects <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="project-body">
+              <h3>First-Time Mom Chatbot</h3>
+              <p>
+                A chatbot concept designed to make helpful, accessible
+                information easier for first-time mothers to navigate.
+              </p>
+              <div class="tags">
+                <span class="tag">AI</span>
+                <span class="tag">Chatbots</span>
+                <span class="tag">User Experience</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                Explore Projects <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div class="project-body">
+              <h3>Call Centre Data Analysis</h3>
+              <p>
+                A data analysis project focused on calls per hour and
+                per day, helping explore workload patterns and
+                operational performance.
+              </p>
+              <div class="tags">
+                <span class="tag">Excel</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">KPIs</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                Explore Projects <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-hospital"></i>
+            </div>
+            <div class="project-body">
+              <h3>Patient Care Website</h3>
+              <p>
+                A web development project exploring digital solutions
+                for presenting patient-care information and organising
+                information for users.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                Explore Projects <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <div class="project-body">
+              <h3>Statistical Analysis Projects</h3>
+              <p>
+                Applied statistical methods and data interpretation
+                techniques to explore patterns and answer analytical
+                questions using statistical tools.
+              </p>
+              <div class="tags">
+                <span class="tag">Statistics</span>
+                <span class="tag">SAS</span>
+                <span class="tag">SPSS</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/Tebogo16299"
+                 target="_blank" rel="noopener noreferrer">
+                Explore Projects <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+<!-- CERTIFICATES SECTION -->
+<section class="certificates-section" id="certificates">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">MY ACHIEVEMENTS</span>
+            <h2>My <span>Certificates</span></h2>
+            <p>Continuous learning and professional development.</p>
+        </div>
+
+        <div class="certificates-grid">
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/python-data-science.pdf" target="_blank">
+                    <img src="Assets/Certificates/python-data-science.jpg"
+                         alt="Tebogo Melita Rakoto - Python for Data Science certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Python for Data Science, AI &amp; Development</h3>
+                    <p>IBM · Coursera</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/python-data-science.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/supervised-machine-learning.pdf" target="_blank">
+                    <img src="Assets/Certificates/supervised-machine-learning.jpg"
+                         alt="Tebogo Melita Rakoto - Supervised Machine Learning certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Supervised Machine Learning: Regression and Classification</h3>
+                    <p>DeepLearning.AI · Stanford Online</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/supervised-machine-learning.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/professional-emails.pdf" target="_blank">
+                    <img src="Assets/Certificates/professional-emails.jpg"
+                         alt="Tebogo Melita Rakoto - Professional Emails certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Write Professional Emails in English</h3>
+                    <p>Georgia Institute of Technology</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/professional-emails.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/introduction-generative-ai.pdf" target="_blank">
+                    <img src="Assets/Certificates/introduction-generative-ai.jpg"
+                         alt="Tebogo Melita Rakoto - Introduction to Generative AI certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Introduction to Generative AI</h3>
+                    <p>Google Cloud</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/introduction-generative-ai.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/google-introduction-to-ai.pdf" target="_blank">
+                    <img src="Assets/Certificates/google-introduction-to-ai.jpg"
+                         alt="Tebogo Melita Rakoto - Introduction to AI certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Introduction to AI</h3>
+                    <p>Google</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/google-introduction-to-ai.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+            <article class="certificate-card">
+                <a href="Assets/Certificates/ibm-introduction-to-ai.pdf" target="_blank">
+                    <img src="Assets/Certificates/ibm-introduction-to-ai.jpg"
+                         alt="Tebogo Melita Rakoto - IBM Introduction to AI certificate">
+                </a>
+                <div class="certificate-info">
+                    <h3>Introduction to Artificial Intelligence</h3>
+                    <p>IBM</p>
+                    <a class="certificate-link"
+                       href="Assets/Certificates/ibm-introduction-to-ai.pdf"
+                       target="_blank">View Certificate ↗</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
 </section>
+<!-- END CERTIFICATES SECTION -->
 
+    <!-- JOURNEY -->
+    <section class="content-section journey-section" id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">My Journey</div>
+          <h2>Learning, Growing & <span>Building</span></h2>
+          <p class="section-intro">
+            My journey combines a strong mathematical foundation,
+            practical experience and a commitment to continuous learning.
+          </p>
+        </div>
 
-<!-- ================= FOOTER ================= -->
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">2024</div>
+            <h3>BSc Mathematics & Computer Science</h3>
+            <p>
+              University of Limpopo. Developed foundations in
+              mathematics, statistics, computing and analytical thinking.
+            </p>
+          </article>
 
-<footer>
+          <article class="timeline-item">
+            <div class="date">2025</div>
+            <h3>Web Development & AI Learning</h3>
+            <p>
+              Continued building digital skills through web development
+              learning, AI fundamentals and hands-on projects.
+            </p>
+          </article>
 
-    <p>
-        © 2026 Tebogo Rakoto · Built with 💜, curiosity & code.
-    </p>
+          <article class="timeline-item">
+            <div class="date">2025–2026</div>
+            <h3>Teaching & Academic Support</h3>
+            <p>
+              Supported learners and teachers, assisted with mathematics
+              learning and contributed to learner-performance tracking.
+            </p>
+          </article>
 
-</footer>
+          <article class="timeline-item">
+            <div class="date">2026</div>
+            <h3>CAPACITI — Data & AI Journey</h3>
+            <p>
+              Developing practical technology skills through collaborative
+              projects, data analysis, AI solutions and GitHub teamwork,
+              with a focus on data engineering.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- INTERESTS -->
+    <section class="content-section" id="interests">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Beyond Technology</div>
+          <h2>A Little More <span>About Me</span></h2>
+          <p class="section-intro">
+            The interests and values that inspire me beyond my career.
+          </p>
+        </div>
 
-<!-- ================= TYPING ANIMATION ================= -->
+        <div class="interests-grid">
+          <article class="interest-card">
+            <i class="fa-solid fa-plane"></i>
+            <h3>Travelling</h3>
+            <p>Discovering places and cultures.</p>
+          </article>
 
-<script>
+          <article class="interest-card">
+            <i class="fa-solid fa-person-walking"></i>
+            <h3>Walking</h3>
+            <p>Enjoying movement and the outdoors.</p>
+          </article>
 
-    const words = [
-        "Data Analyst",
-        "Data Engineer",
-        "AI Enthusiast",
-        "Problem Solver",
-        "Technology Explorer"
-    ];
+          <article class="interest-card">
+            <i class="fa-solid fa-people-roof"></i>
+            <h3>Family</h3>
+            <p>Making meaningful memories.</p>
+          </article>
 
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+          <article class="interest-card">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h3>Community</h3>
+            <p>Helping and supporting others.</p>
+          </article>
 
-    const typing = document.getElementById("typing");
+          <article class="interest-card">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>Teaching Maths</h3>
+            <p>Helping learners grow in confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    function typeEffect() {
+    <!-- CONTACT -->
+    <section class="content-section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Get In Touch</div>
+          <h2>Let's Create Something <span>Together</span></h2>
+          <p class="section-intro">
+            Interested in working together, discussing a project or
+            connecting about opportunities in data, AI and technology?
+            I would love to hear from you.
+          </p>
+        </div>
 
-        const currentWord = words[wordIndex];
+        <div class="contact-grid">
+          <div class="contact-details">
+            <a class="contact-item" href="mailto:melitahrakoto88@gmail.com">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <small>Email me</small>
+                <strong>melitahrakoto88@gmail.com</strong>
+              </div>
+            </a>
 
-        if (!deleting) {
+            <a class="contact-item"
+               href="https://github.com/Tebogo16299"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <small>Explore my code</small>
+                <strong>GitHub Portfolio</strong>
+              </div>
+            </a>
 
-            typing.textContent =
-                currentWord.substring(0, charIndex + 1);
+            <!-- Replace this link with your real LinkedIn URL -->
+            <a class="contact-item" href="#contact">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <small>Connect professionally</small>
+                <strong>LinkedIn Profile</strong>
+              </div>
+            </a>
+          </div>
 
-            charIndex++;
+          <form class="contact-form" id="contactForm">
+            <input type="text" id="visitorName"
+                   placeholder="Your name" required>
 
-            if (charIndex === currentWord.length) {
+            <input type="email" id="visitorEmail"
+                   placeholder="Your email address" required>
 
-                deleting = true;
+            <textarea id="visitorMessage"
+                      placeholder="Write your message here..."
+                      required></textarea>
 
-                setTimeout(typeEffect, 1500);
+            <button class="primary-button" type="submit">
+              <i class="fa-regular fa-paper-plane"></i>
+              Send Me a Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                return;
-            }
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Tebogo Rakoto.
+      Built with purpose and <span>♥</span>.
+    </div>
+  </footer>
 
-        } else {
+  <script>
+    // Update the copyright year automatically.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-            typing.textContent =
-                currentWord.substring(0, charIndex - 1);
+    // Mobile navigation menu.
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-            charIndex--;
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
 
-            if (charIndex === 0) {
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
 
-                deleting = false;
+    // Close the menu when a section link is selected.
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
 
-                wordIndex++;
+    // Highlight the navigation link for the visible section.
+    const sections = document.querySelectorAll("main section[id]");
+    const pageLinks = document.querySelectorAll(".nav-links a");
 
-                if (wordIndex === words.length) {
-                    wordIndex = 0;
-                }
-
-            }
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          pageLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
         }
+      });
+    }, { rootMargin: "-25% 0px -60% 0px" });
 
-        setTimeout(typeEffect, deleting ? 60 : 100);
-    }
+    sections.forEach(section => observer.observe(section));
 
-    typeEffect();
+    // Contact form: open the visitor's email application.
+    // Replace YOUR_EMAIL@example.com with your real email address.
+    document.getElementById("contactForm").addEventListener("submit", event => {
+      event.preventDefault();
 
-</script>
+      const name = document.getElementById("visitorName").value.trim();
+      const email = document.getElementById("visitorEmail").value.trim();
+      const message = document.getElementById("visitorMessage").value.trim();
 
+      const recipient = "YOUR_EMAIL@example.com";
+      const subject = encodeURIComponent("Portfolio enquiry from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message
+      );
+
+      if (recipient === "YOUR_EMAIL@example.com") {
+        alert("Please replace YOUR_EMAIL@example.com in the HTML with your real email address first.");
+        return;
+      }
+
+      window.location.href =
+        "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
 
 </body>
 </html>
